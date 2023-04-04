@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 47872943}
   - component: {fileID: 47872942}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Typing_UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -218,7 +218,7 @@ RectTransform:
   - {fileID: 1282119696}
   - {fileID: 109388807}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -369,7 +369,7 @@ GameObject:
   - component: {fileID: 498963776}
   - component: {fileID: 498963775}
   m_Layer: 0
-  m_Name: TypingObject
+  m_Name: Typing_Object
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -406,7 +406,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1282119693
 GameObject:
