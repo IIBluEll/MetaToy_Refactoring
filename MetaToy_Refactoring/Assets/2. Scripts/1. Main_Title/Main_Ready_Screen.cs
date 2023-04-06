@@ -34,7 +34,6 @@ public class Main_Ready_Screen : MonoBehaviour
 
     Image ready_IMG;
 
-    float duration = 1.0f; // 페이드 아웃 시간
 
     #endregion
 
@@ -88,7 +87,7 @@ public class Main_Ready_Screen : MonoBehaviour
 
         yield return new WaitForSeconds(.5f);
 
-        SceneManager.LoadScene("CharChoice");
+        SceneManager.LoadScene("ChoiceCharacter");
     }
 
     // 스토리 타이밍 씬으로 이동

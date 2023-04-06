@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using static UnityEngine.GraphicsBuffer;
+using UnityEngine.SceneManagement;
 
 // StoryTyping.cs
 // 1. 스토리를 타이핑 하는 시각적인 효과
@@ -17,6 +19,10 @@ public class StoryTyping : MonoBehaviour
     [Space(20f)]
     [Header("[ TMP TXT ]")]
     public TextMeshProUGUI storyTxt;    // 다음 스토리 버튼
+
+    [Space(20f)]
+    [Header("[ Loading Screen IMG ]")]
+    public GameObject loadingIMG;
 
     [Space(20f)]
     [Header("[ Next Story Button ]")]
@@ -56,6 +62,18 @@ public class StoryTyping : MonoBehaviour
         nextStoryBtn.interactable = true;
     }
 
+    // 캐릭터 선택 씬으로 이동
+    IEnumerator GoCharChoiceScene()
+    {
+        loadingIMG.SetActive(true);
+
+        yield return new WaitForSeconds(.5f);
+
+        SceneManager.LoadScene("ChoiceCharacter");
+    }
+
+    // 스토리 타이핑이 끝났을 경우, 다음 스토리 진행
+    // 스토리가 끝났을 경우 캐릭터 선택 화면으로 전환
     public void NextStory_Btn()
     {
         if (check_View_Count < datas.Length -1)
@@ -69,8 +87,8 @@ public class StoryTyping : MonoBehaviour
             StartCoroutine("TypingAction");
         }
 
-        else
-            return;
-            // 캐릭터 선택화면 씬 전환
+        else // 캐릭터 선택화면 씬 전환
+            StartCoroutine("GoCharChoiceScene");
+        
     }
 }
