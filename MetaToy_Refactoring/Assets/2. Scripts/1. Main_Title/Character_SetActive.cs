@@ -16,7 +16,7 @@ public class Character_SetActive : MonoBehaviour
 
     private void Awake()
     {
-        for (int i = 0; i < Save_System.instance.level; i++)
+        for (int i = 0; i <= Save_System.instance.level; i++)
             Characters[i].SetActive(true);
     }
 }
