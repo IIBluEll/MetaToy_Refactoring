@@ -6,6 +6,7 @@ using UnityEngine.UI;
 // Character_Select.cs
 // 1. 좌우 버튼을 클릭시 캐릭터 스프라이트가 순서에 맞게 변경
 // 2. 동시에 캐릭터 설명 이미지도 바뀜
+// 3. 선택할 수 없는 캐릭터일 경우, 스타트 버튼 비활성화
 
 public class Character_Select : MonoBehaviour
 {
@@ -77,9 +78,10 @@ public class Character_Select : MonoBehaviour
     // 선택 가능한 플레이어블 캐릭터인지 확인
     // 아닐 경우 버튼 상호작용 제한
     public void CheckISPlayable()
-    {
+    {      
         int nowLevel = Save_System.instance.level;
 
+        // 플레이어가 선택한 캐릭터 인덱스가 진행한 레벨보다 낮다면 비활성화
         gamePlay_Btn.interactable = currentIndex > nowLevel ? false : true;
   
     }

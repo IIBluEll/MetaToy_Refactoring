@@ -11,24 +11,19 @@ using UnityEngine;
 public class LoadData_Mgr : MonoBehaviour
 {
     [Header(" [ # For Change Character Sprite ] ")]
-    // 캐릭터 변경 스크립트의 스프라이트 배열을 쓰기 위함
-    public Character_Select _script_Character_Select;
-    // 변경할 캐릭터 스프라이트 리스트
-    public List<Sprite> willChangeChar_IMG;
+    public Character_Select _script_Character_Select;  // 캐릭터 변경 스크립트의 스프라이트 배열을 쓰기 위함
+    public List<Sprite> willChangeChar_IMG; // 변경할 캐릭터 스프라이트 리스트
 
     [Space(20f)]
     [Header(" [ # For Change Crown Sprite ] ")]
-    // 현재 왕관 스프라이트 리스트
-    public List<Image> currentCrown_IMG;
-    // 변경할 왕관 스프라이트 리스트
-    public List<Sprite> willChangeCrown_IMG;
+    
+    public List<Image> currentCrown_IMG;    // 현재 왕관 스프라이트 리스트
+    public List<Sprite> willChangeCrown_IMG;    // 변경할 왕관 스프라이트 리스트
 
     [Space(20f)]
     [Header(" [ # For Change Ticket GameObject] ")]
-    // 현재 티켓 게임 오브젝트
-    public GameObject currentTicket_GameObject;
-    // 풀 사이즈 티켓 게임 오브젝트
-    public GameObject full_Ticket_GameObject;
+    public GameObject currentTicket_GameObject; // 현재 티켓 게임 오브젝트
+    public GameObject full_Ticket_GameObject;   // 풀 사이즈 티켓 게임 오브젝트
 
     [Space(20f)]
     [Header("[ BackGround Image Array ]")]
