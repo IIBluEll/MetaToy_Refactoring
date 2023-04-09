@@ -107,5 +107,5 @@ public class Main_Ready_Screen : MonoBehaviour
         SceneManager.LoadScene("Stroy_Typing");
     }
 
-
+    
 }
