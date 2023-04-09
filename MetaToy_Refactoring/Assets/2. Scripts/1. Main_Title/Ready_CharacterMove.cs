@@ -70,7 +70,7 @@ public class Ready_CharacterMove : MonoBehaviour
         CancelInvoke();
         Invoke("Think", TurnDelay);
     }
-
+    
     void Think()    // 캐릭터의 다음 이동 방향 결정
     {
         nextMove = Random.Range(-1, 2);

@@ -26,9 +26,10 @@ public class Character_Select : MonoBehaviour
     public Image characterExplaneImg;
 
     [Space(20f)]
-    [Header(" [ GamePlay Button ] ")]
-    // 캐릭터 설명 스프라이트 리스트
+    [Header(" [ UI Objects ] ")]
+    // UI 상호작용을 위함
     public Button gamePlay_Btn;
+    public GameObject stage_Select;
 
     // 캐릭터 스프라이트 배열중 현재 인덱스 값을 위한 변수
     private int currentIndex = 0;
@@ -41,7 +42,9 @@ public class Character_Select : MonoBehaviour
         characterExplaneImg.sprite = characterExplan[currentIndex];
     }
 
-    public void NextCharacter()
+    //! -----버튼 함수---------
+
+    public void NextCharacter() // 오른쪽 버튼 => 다음 캐릭터 이미지
     {
         currentIndex++;
 
@@ -58,7 +61,7 @@ public class Character_Select : MonoBehaviour
         CheckISPlayable();
     }
 
-    public void PreviousCharacter()
+    public void PreviousCharacter() // 왼쪽 버튼 => 직전 캐릭터 이미지 
     {
         currentIndex--;
 
@@ -73,6 +76,11 @@ public class Character_Select : MonoBehaviour
         characterExplaneImg.sprite = characterExplan[currentIndex];
 
         CheckISPlayable();
+    }
+
+    public void StartInGame()  // Start 버튼 => 스테이지 선택 UI 활성화
+    {
+        stage_Select.SetActive(true);
     }
 
     // 선택 가능한 플레이어블 캐릭터인지 확인

@@ -89,7 +89,7 @@ public class Save_System : MonoBehaviour
     }
 
     // 랜덤 NFT 16자리 번호 생성기
-    void MakeTicketRanNum()
+    public void MakeTicketRanNum()
     {
         for (int i = 0; i < 16; i++)
         {
@@ -99,5 +99,15 @@ public class Save_System : MonoBehaviour
             nft_Number += $"{a[i]}";
         }
 
+    }
+
+    public void Save_Character()
+    {
+
+    }
+
+    public void Load_Character()
+    {
+        
     }
 }
