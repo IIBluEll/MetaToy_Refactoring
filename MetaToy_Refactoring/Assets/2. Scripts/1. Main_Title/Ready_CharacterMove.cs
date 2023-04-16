@@ -16,7 +16,7 @@ public class Ready_CharacterMove : MonoBehaviour
     Rigidbody2D rigid;
     SpriteRenderer sprite;
 
-    private float duration = .5f; // 페이드 아웃 시간
+    private float duration = .25f; // 페이드 아웃 시간
 
     private int nextMove = 1;   // 다음 이동 방향
 

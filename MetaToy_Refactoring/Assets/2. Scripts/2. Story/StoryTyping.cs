@@ -28,6 +28,8 @@ public class StoryTyping : MonoBehaviour
     [Header("[ Next Story Button ]")]
     public Button nextStoryBtn;
 
+    AudioSource typingAudio;
+
     string storyMessage;    // 현재 스토리
     string temp_StoryMessage;   // 타이핑 효과를 위한 문자열
 
@@ -36,6 +38,8 @@ public class StoryTyping : MonoBehaviour
 
     private void Start()
     {
+        typingAudio = this.GetComponent<AudioSource>();
+
         // 다음 스토리 버튼 비활성화
         nextStoryBtn.interactable = false;
 
@@ -49,6 +53,8 @@ public class StoryTyping : MonoBehaviour
 
     IEnumerator TypingAction()
     {
+        typingAudio.Play();
+
         for(int i = 0; i < storyMessage.Length; i++)
         {
             yield return new WaitForSeconds(typing_Speed);
@@ -58,6 +64,9 @@ public class StoryTyping : MonoBehaviour
             storyTxt.text = temp_StoryMessage;
             temp_StoryMessage = "";
         }
+
+        typingAudio.Stop();
+        
         // 다음 스토리 버튼 활성화
         nextStoryBtn.interactable = true;
     }

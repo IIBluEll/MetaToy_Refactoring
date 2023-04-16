@@ -4,23 +4,23 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 // Music_System.cs
-// 1. °¢ ¾À¿¡ ¸Â´Â ¹è°æÀ½¾Ç ÁöÁ¤
-// 2. ¾ÀÀÌ º¯°æµÉ¶§¸¶´Ù ±×¿¡ ¸Â´Â ¹è°æÀ½¾ÇÀ» ÀÚ¿¬½º·´°Ô ÀüÈ¯
-// 3. º¸½º¸¦ ¸¸³µÀ» ¶§´Â Àü¿ë À½¾ÇÀ¸·Î º¯°æ
+// 1. ê° ì”¬ì— ë§ëŠ” ë°°ê²½ìŒì•… ì§€ì •
+// 2. ì”¬ì´ ë³€ê²½ë ë•Œë§ˆë‹¤ ê·¸ì— ë§ëŠ” ë°°ê²½ìŒì•…ì„ ìì—°ìŠ¤ëŸ½ê²Œ ì „í™˜
+// 3. ë³´ìŠ¤ë¥¼ ë§Œë‚¬ì„ ë•ŒëŠ” ì „ìš© ìŒì•…ìœ¼ë¡œ ë³€ê²½
 
 
 public class Music_System : MonoBehaviour
 {
-   public static Music_System instance; // ½Ì±ÛÅÏ ÆĞÅÏ
+   public static Music_System instance; // ì‹±ê¸€í„´ íŒ¨í„´
 
     public AudioSource backgroundMusic;
-    public AudioClip title_BGM;     // Å¸ÀÌÆ² ¸Ş´º À½¾Ç
-    public AudioClip choice_BGM;    // Ä³¸¯ÅÍ ¼±ÅÃ ¸Ş´º À½¾Ç
-    public AudioClip battle_BGM;    // ÀüÅõ À½¾Ç
-    public AudioClip boss_BGM;      // º¸½º À½¾Ç
+    public AudioClip title_BGM;     // íƒ€ì´í‹€ ë©”ë‰´ ìŒì•…
+    public AudioClip choice_BGM;    // ìºë¦­í„° ì„ íƒ ë©”ë‰´ ìŒì•…
+    public AudioClip battle_BGM;    // ì „íˆ¬ ìŒì•…
+    public AudioClip boss_BGM;      // ë³´ìŠ¤ ìŒì•…
 
     public Dictionary<string, AudioClip> bgms;
-    public float time = 1f; // À½¾Ç ÀüÈ¯ ½Ã°£
+    public float time = 1f; // ìŒì•… ì „í™˜ ì‹œê°„
 
     private void Awake()
     {
@@ -34,7 +34,7 @@ public class Music_System : MonoBehaviour
             Destroy(this.gameObject);
         }
 
-        // ¾ÀÀÌ ·Îµå µÉ¶§ ÀÚµ¿À¸·Î È£Ãâ
+        // ì”¬ì´ ë¡œë“œ ë  ë•Œ ìë™ìœ¼ë¡œ í˜¸ì¶œë¨
         SceneManager.sceneLoaded += OnSceneLoad;
     }
 
@@ -43,18 +43,19 @@ public class Music_System : MonoBehaviour
         bgms = new Dictionary<string, AudioClip>()
         {
             {"Main_Title", title_BGM},
-            {"ChoiceCharacter", choice_BGM }
+            {"ChoiceCharacter", choice_BGM },
+            {"Stroy_Typing", null}
         };
     }
 
-    // ¾ÀÀÌ ·Îµå µÉ ‹š ÀÚµ¿À¸·Î È£ÃâµÊ
+    // Å¾Å”Å”Äš Ë‡ÃÄ¾Äº Ä¾Ã‰ Â‹Âš Å”ÃšÄ¾Å¼Å”Â¸Ë‡Ã ÄŒÅÄ‚Ã¢Ä¾Ä˜
     void OnSceneLoad(Scene scene, LoadSceneMode mode)
     {
         PlayBGM();
     }
 
-    // ÇöÀç ¾À ÀÌ¸§À» °¡Á®¿Í, Dictionary¿¡ ÀúÀåµÈ °ª°ú ´ëÁ¶
-    // À½¾ÇÀ» ¹Ù²Ù´Â ÄÚ·çÆ¾ ½ÇÇà
+    // í˜„ì¬ ì”¬ ì´ë¦„ì„ ê°€ì ¸ì™€, Dictionaryì— ì €ì¥ëœ ê°’ê³¼ ëŒ€ì¡°
+    // ìŒì•…ì„ ë°”ê¾¸ëŠ” ì½”ë£¨í‹´ ì‹¤í–‰
     public void PlayBGM()
     {
         string nowSceneName = SceneManager.GetActiveScene().name; 
@@ -65,13 +66,13 @@ public class Music_System : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("ÇöÀç ¾À¿¡ ¸Â´Â ¹è°æÀ½¾ÇÀÌ ¾ø½À´Ï´Ù.");
+            Debug.LogWarning("í˜„ì¬ ì”¬ì— ë§ëŠ” ë°°ê²½ìŒì•…ì´ ì—†ìŠµë‹ˆë‹¤.");
         }
     }
 
     IEnumerator ChangeBGM(AudioClip newclip)
     {
-        //--- º¼·ı ³·Ãß±â --- // 
+        //--- ë³¼ë¥¨ ë‚®ì¶”ê¸° --- // 
 
         float volume = backgroundMusic.volume;
         float ntime = 0;
@@ -83,13 +84,13 @@ public class Music_System : MonoBehaviour
             yield return null;
         }
 
-        // --- ³ë·¡ ¹Ù²Ù±â --- //
+        // --- ë…¸ë˜ ë°”ê¾¸ê¸° --- //
 
         backgroundMusic.clip = newclip;
         backgroundMusic.volume = 0;
         backgroundMusic.Play();
 
-        // --- º¼·ı ¿Ã¸®±â --- // 
+        // --- ë³¼ë¥¨ ì˜¬ë¦¬ê¸° --- // 
 
         ntime = 0;
         while (ntime < time)

@@ -63,12 +63,15 @@ public class Main_Ready_Screen : MonoBehaviour
     {
         Save_System.instance.isTitleSkip = 1;
 
+        Alarm_ViewStroy.SetActive(false);
+
         // 캐릭터 선택 씬으로 이동
         StartCoroutine("GoCharChoiceScene");
     }
 
     public void NoBtn()
     {
+        Alarm_ViewStroy.SetActive(false);
         // 타이핑 씬으로 이동
         StartCoroutine("GoTypingStoryScnene");
     }
@@ -98,7 +101,7 @@ public class Main_Ready_Screen : MonoBehaviour
             // SendMessage로 캐릭터들 페이드 아웃 호출
             item.SendMessage("FadeOut", SendMessageOptions.DontRequireReceiver);
         }
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(.25f);
 
         loading_IMG.SetActive(true);
 

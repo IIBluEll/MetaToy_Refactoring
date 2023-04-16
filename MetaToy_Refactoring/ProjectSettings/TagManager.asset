@@ -12,7 +12,7 @@ TagManager:
   - Ready_Floor
   - Water
   - UI
-  - 
+  - Title_Character
   - 
   - 
   - 
@@ -41,4 +41,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: UI
+    uniqueID: 1702803683
+    locked: 0
+  - name: Title_Character
+    uniqueID: 709390831
     locked: 0
