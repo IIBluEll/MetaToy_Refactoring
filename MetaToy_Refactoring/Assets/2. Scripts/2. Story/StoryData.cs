@@ -7,7 +7,7 @@ using UnityEngine;
 public class StoryData : ScriptableObject
 {
     [Header("[ Story Data ]")]
-    [Multiline (5)]
+    [Multiline (30)]
     public string story;
     public float typingSpeed;
 }

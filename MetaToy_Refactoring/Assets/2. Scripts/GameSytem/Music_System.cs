@@ -20,7 +20,7 @@ public class Music_System : MonoBehaviour
     public AudioClip boss_BGM;      // 보스 음악
 
     public Dictionary<string, AudioClip> bgms;
-    public float time = 1f; // 음악 전환 시간
+    public float time = .6f; // 음악 전환 시간
 
     private void Awake()
     {
