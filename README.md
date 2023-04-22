@@ -16,7 +16,7 @@
 
 * [__리팩토링 된 전체 프로젝트를 다운받고 싶으시다면 여기로 오세요!__][new]
   
-    [new]: https://github.com/IIBluEll/MetaToy_Refactoring 
+    [new]: https://github.com/IIBluEll/MetaToy_Refactoring/releases/tag/MTDZ_Re
 
 
 </n>
