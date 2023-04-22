@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 // Save_System.cs
 // 게임 데이터 저장 및 불러오기
+// 씬 로드 
+// 선택한 캐릭터 인게임 씬으로 넘겨주기
 
 public class Save_System : MonoBehaviour
 {
@@ -19,14 +22,20 @@ public class Save_System : MonoBehaviour
                                 // 0 => false / 1 = > true
 
     public string nft_Number = "";
+
+    int player_SelectCharNum;
+
     #endregion
 
     private void Awake()
     {
         if(instance == null)
         {
+
             instance = this;
             DontDestroyOnLoad(this);
+            MakeTicketRanNum(); // NFT 번호 생성
+
         }
         else
         {
@@ -34,7 +43,7 @@ public class Save_System : MonoBehaviour
         }
 
         LoadGame(); // 게임이 시작되자마자 데이터 로드를 위함
-        MakeTicketRanNum(); // NFT 번호 생성
+       
     }
 
     // 데이터 저장
@@ -82,10 +91,10 @@ public class Save_System : MonoBehaviour
         }
         else if(level == 4)
         {
-            lastStageOpen = 1;
+            lastStageClear = 1;
         }
             
-        SaveGame();
+        //SaveGame();
     }
 
     // 랜덤 NFT 16자리 번호 생성기
@@ -101,13 +110,25 @@ public class Save_System : MonoBehaviour
 
     }
 
-    public void Save_Character()
+    public void LoadSceneManager(string sceneName)
     {
-
+        StartCoroutine(LoadingScene(sceneName));
     }
 
-    public void Load_Character()
+    IEnumerator LoadingScene(string name)
     {
-        
+        yield return new WaitForSeconds(.5f);
+
+        SceneManager.LoadScene($"{name}");
+    }
+
+    public void Save_Character(int num)
+    {
+        player_SelectCharNum = num;
+    }
+
+    public int Load_Character()
+    {
+        return player_SelectCharNum;
     }
 }

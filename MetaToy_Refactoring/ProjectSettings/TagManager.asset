@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ready_Floor
+  - Capsule
   layers:
   - Default
   - TransparentFX

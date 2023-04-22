@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/1. Scene/Debug_Start.unity
     guid: 36b3d6d89aa0a194f84cc2b7e2b850e9
   - enabled: 1
@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/1. Scene/ChoiceCharacter.unity
     guid: 150d44e22cf83274fa4639592fd5afdf
+  - enabled: 1
+    path: Assets/1. Scene/Stage.unity
+    guid: cd93e81bd0325ff46ad8624839d16e96
   m_configObjects: {}

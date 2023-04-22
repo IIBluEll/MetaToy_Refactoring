@@ -17,10 +17,10 @@ public class Music_System : MonoBehaviour
     public AudioClip title_BGM;     // 타이틀 메뉴 음악
     public AudioClip choice_BGM;    // 캐릭터 선택 메뉴 음악
     public AudioClip battle_BGM;    // 전투 음악
-    public AudioClip boss_BGM;      // 보스 음악
+ 
 
     public Dictionary<string, AudioClip> bgms;
-    public float time = .6f; // 음악 전환 시간
+    public float time = .05f; // 음악 전환 시간
 
     private void Awake()
     {
@@ -44,11 +44,12 @@ public class Music_System : MonoBehaviour
         {
             {"Main_Title", title_BGM},
             {"ChoiceCharacter", choice_BGM },
-            {"Stroy_Typing", null}
+            {"Stroy_Typing", null},
+            {"Stage",battle_BGM}
         };
     }
 
-    // žŔŔĚ ˇÎľĺ ľÉ  ŔÚľżŔ¸ˇÎ ČŁĂâľĘ
+     // 씬이 로드 될 때 자동으로 호출됨
     void OnSceneLoad(Scene scene, LoadSceneMode mode)
     {
         PlayBGM();
@@ -59,6 +60,8 @@ public class Music_System : MonoBehaviour
     public void PlayBGM()
     {
         string nowSceneName = SceneManager.GetActiveScene().name; 
+
+        Debug.Log($"씬 로드 호출 // 현재 씬 이름 : {nowSceneName}");
 
         if(bgms.ContainsKey(nowSceneName))
         {

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 // Character_Select.cs
@@ -30,6 +31,8 @@ public class Character_Select : MonoBehaviour
     // UI 상호작용을 위함
     public Button gamePlay_Btn;
     public GameObject stage_Select;
+
+    public GameObject loading_IMG;
 
     // 캐릭터 스프라이트 배열중 현재 인덱스 값을 위한 변수
     private int currentIndex = 0;
@@ -81,6 +84,16 @@ public class Character_Select : MonoBehaviour
     public void StartInGame()  // Start 버튼 => 스테이지 선택 UI 활성화
     {
         stage_Select.SetActive(true);
+
+        // 플레이어가 선택한 캐릭터 인덱스를 Save시스템을 이용해, 인게임 씬으로 정보를 넘김
+        Save_System.instance.Save_Character(currentIndex);
+    }
+
+    public void GoInGame()
+    {
+        stage_Select.SetActive(false);
+        loading_IMG.SetActive(true);
+        Save_System.instance.LoadSceneManager("Stage");
     }
 
     // 선택 가능한 플레이어블 캐릭터인지 확인
