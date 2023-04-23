@@ -29,6 +29,8 @@ public class Save_System : MonoBehaviour
 
     private void Awake()
     {
+        Application.targetFrameRate = 60;
+
         if(instance == null)
         {
 
