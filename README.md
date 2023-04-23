@@ -31,8 +31,7 @@
 <br/>
 
 ## 개선 후 게임 플레이 영상
-
-[![OldVersionYT](https://img.youtube.com/vi/Et_NBJbYsxM/maxresdefault.jpg)](https://www.youtube.com/watch?v=Et_NBJbYsxM)
+[![Video Label](https://user-images.githubusercontent.com/19919570/233820432-6f497b58-a6bb-4735-bba5-7829d8f50580.png)](https://www.youtube.com/watch?v=57-Z9Yx9iOQ)
 
 <br/>
 
