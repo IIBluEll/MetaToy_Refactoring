@@ -8,7 +8,7 @@
 
 * [__작업 과정이 궁금하다면 노션으로 놀러오세요!__][notion]
   
-  [notion]: https://hmlee4135.notion.site/Hyunmin-Lee-1436d2f4b6a848a5896f6600b3892dc1
+  [notion]: https://yoyosproject.notion.site/MetatoyDragonz-Adventure-566871c4684e4fe1903c82ad05ed77cc
 
 * [__개선 전 코드가 궁금하다면 깃허브도 보러오세요!__][github]
   
